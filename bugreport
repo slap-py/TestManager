@@ -1,0 +1,5 @@
+BUGS AS OF JUNE 2:
+when having more than two questions, not all of the answers will deploy to the backend from the student answering page, but the deployment to the grading page is bugless.
+ADDING ON:
+WITH NUM AT 2 IN THE BEGINNING: 3+ QUESTIONS DEPLOY CORRECTLY, BUT BELOW THAT DOES NOT DEPLOY TO THE STUDENT LOGIN PAGE AT ALL
+Num at 0 does not deploy 3+

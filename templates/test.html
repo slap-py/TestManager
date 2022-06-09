@@ -1,23 +1,36 @@
-<script src="{{ url_for('static', filename='testHandler.js') }}"></script>
+<!-- Import Bootstrap style module -->
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<!-- Import Script files from folder /static using Jinja2 (flask) syntax -->
+<script src="{{ url_for('static', filename='testHandler.js') }}"></script>
 <script src="{{ url_for('static', filename='onLoad.js') }}"></script>
+<script src="{{ url_for('static', filename='toggle.js') }}"></script>
+<!-- Import Styling -->
+<link href="{{ url_for('static',filename='style.css') }}" rel='stylesheet'>
+<!-- Output the test name (flask syntax) -->
 <h1>{{testname}}</h1>
-<table>
 
+
+<!-- Output all questions and their options-->
+<table>
     {%for i in range(0, len)%}
     <tr>
-        <td>
-        </td>
-        <td>
-            <div class="input-group">
-                <textarea class="form-control" aria-label="With textarea" id="thing-{{i}}"
-                    placeholder="{{questions[i]}}"></textarea>
-            </div>
-        </td>
+        <td><p><b>{{questions[i]}}</b></p></td>
+        <td><button class="btn btn-success" id="a-{{i}}">{{a[i]}}</button></td>
+        <td><button class="btn btn-success" id="b-{{i}}">{{b[i]}}</button></td>
+        <td><button class="btn btn-success" id="c-{{i}}">{{c[i]}}</button></td>
+        <td><button class="btn btn-success" id="d-{{i}}">{{d[i]}}</button></td>
     </tr>
     {%endfor%}
-
 </table>
-
+<!-- Show the persons score out of the max points -->
+<p id='pointAmount' hidden></p>
+<script>
+    // Ensure that only one of the buttons in each row can be on at once (using toggle4 function from toggle.js)
+    // Using Python syntax in brackets due to flask/jinja2 interpreting.
+    {%for i in range(0, len)%}
+    toggle4("a-{{i}}","b-{{i}}","c-{{i}}","d-{{i}}")
+    {%endfor%}
+</script>
 <button type="button" class="btn btn-success" id="submit" onclick="submittest()">Submit Test</button>

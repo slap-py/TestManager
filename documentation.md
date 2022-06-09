@@ -1,0 +1,2 @@
+### QuizRegistry FORMAT ###
+{'ID': {'name': 'TESTNAME', 'questions': ['QUESTION 1', 'QUESTION 2'], 'questionPoints': ['QUESTION POINTS ONE', 'QUESTION POINTS TWO'], 'totalPoints': TEST TOTAL POINTS, 'answers': ['TEST CORRECT ANSWER 1', 'TEST CORRECT ANSWER TWO'], 'id': 'TEST INTERNAL AND LINK ID', 'link': 'TEST LINK'}}

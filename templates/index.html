@@ -1,18 +1,58 @@
-<script src="{{ url_for('static', filename='testHandler.js') }}"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-<script src="{{ url_for('static', filename='onLoad.js') }}"></script>
+<head>
+	<!-- Import the bootstrap style library. -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<!-- Import necessary files from the folder /static/ using flask syntax. -->
+	<script src="{{ url_for('static', filename='testHandler.js') }}"></script>
+	<script src="{{ url_for('static', filename='tutorialManager.js') }}"></script>
+</head>
+<body style="scroll-behavior: smooth;">
 <br>
-
-<div class="input-group" style="width:25%;">
-	<textarea class="form-control" aria-label="With textarea" id="test-name" placeholder="Test Name" ></textarea>
+<!-- TUTORIAL/HOW TO USE -->
+<div id="tutorialArea">
+<h1>How to use & Information</h1>
+	<hr>
+	<h2>Information</h2>
+	<p>This tool is intended to be used by teachers to make creating online tests easier.</p>
+	<hr style="border-top: 1px dashed">
+	<h2>How to use</h2>
+	<p>To use this tool, you first put in the name of the test you are creating.<br>Next, you input the question, as well as it's 4 possible answers (multiple choice).<br>After this, click submit! Your test will be uploaded to the server for students to take, and a link will be provided for the students to take the test.</p>
+	<hr style="border-top: 1px dashed">
+	<h2>How it works</h2>
+	<p>It works by using a Python web-server (using the open-source Flask framework), and an HTML/CSS/JavaScript website.<br>The data inputted by the user is sent to the server for storage, where it can be referenced whenever needed.</p>
+	<!-- Make a space for the  -->
+	<table>
+		<tr>
+			<td>
+				<button type="button" class="btn btn-primary" onclick="tutorialComplete()">Click here to start.</button>
+			</td>
+			<td>
+				<button type="button" class="btn btn-warning" onclick="window.location.replace('/progression')">Click here to see project progression. (WORK IN PROGRESS)</button>
+			</td>
+		</tr>
+	</table>
+	
+	<hr>
 </div>
-<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br id='scrollTo'>
 
-<table id="testTable">
-</table>
-<button type="button" class="btn btn-success" onclick="test()">New Question</button>
-<button type="button" class="btn btn-primary" onclick="submit()">Submit Questions</button>
-<h2 id="testlink"></h2>
+<div id="operationArea">
+
+
+	<div class="input-group" style="width:25%;">
+		<textarea class="form-control" aria-label="With textarea" id="test-name" placeholder="Test Name" ></textarea>
+	</div>
+	<br>
+	<!-- Make the table to store the created test questions. -->
+	<table id="testTable">
+	</table>
+	<!-- When the new question function is pressed do the newquestion() function -->
+	<button type="button" class="btn btn-success" onclick="newquestion()">Add Question</button>
+	<!-- Submit the questions using the submit() function. -->
+	<button type="button" class="btn btn-primary" onclick="submit()">Submit Questions</button>
+	<h2 id="testlink"></h2>
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br id='scrollTo'>
+
 </body>
-

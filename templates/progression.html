@@ -1,0 +1,17 @@
+<head>
+	<!-- Import the bootstrap style library. -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<!-- Import necessary files from the folder /static/ using flask syntax. -->
+	<script src="{{ url_for('static', filename='testHandler.js') }}"></script>
+	<script src="{{ url_for('static', filename='tutorialManager.js') }}"></script>
+</head>
+
+<body>
+    <h1>Progression</h1>
+    <hr>
+    <h2>In the beginning</h2>
+    <p>In the beginning, the program was designed to be strictly text-based, where all questions were entered in the console (without graphics), and answered in the same place.</p>
+    <p>It slowly evolved into a full scale test maker/taker for teachers to make a test and for students to take it.</p>
+    <img src="{{url_for('static', filename='early1.png')}}">
+</body>
